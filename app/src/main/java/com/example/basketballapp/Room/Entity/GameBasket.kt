@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "GameBasket")
 
 data class GameBasket(
-        @PrimaryKey
+        @PrimaryKey(autoGenerate = true)
         var id: Long = 0,
         @ColumnInfo(name = "teamA")
         val teamA: String,

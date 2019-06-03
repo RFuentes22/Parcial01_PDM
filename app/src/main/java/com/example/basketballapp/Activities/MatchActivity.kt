@@ -2,9 +2,6 @@ package com.example.basketballapp.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
@@ -69,12 +66,7 @@ class MatchActivity : AppCompatActivity() {
             val date = intent.getStringExtra("date")
             val time = intent.getStringExtra("time")
 
-           // var data = viewModel.getAllGames() as GameBasket
-            //var id = data.id + 1
-
-           // Log.d("New id",id.toString())
-
-            viewModel.insertGame(GameBasket(3,name_teamA,name_teamB,scoreTeamA,scoreTeamB,date,time))
+            viewModel.insertGame(GameBasket(0,name_teamA,name_teamB,scoreTeamA,scoreTeamB,date,time))
             Toast.makeText(this, "SAVED!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
