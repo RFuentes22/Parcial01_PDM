@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:elevation="2dp"
+    card_view:cardUseCompatPadding="true"
+    tools:context=".Activities.MainActivity"
+    card_view:cardCornerRadius="@dimen/card_view_radius">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/word_title"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/holo_orange_light" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <!-- TODO () : Este elemento solo existe para permitir ver el reciclaje de Views -->
+        <TextView
+            android:id="@+id/id_element"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="0" />
+
+
+
+        <ImageView
+            android:id="@+id/iv_game_basketball"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/basketball" />
+
+        <TextView
+
+            android:textStyle="bold"
+            android:id="@+id/tv_game_name"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_gap"
+            android:layout_toRightOf="@id/iv_game_basketball"
+            android:text="Teams"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:layout_marginTop="@dimen/small_gap"
+            android:id="@+id/tv_date_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_game_name"
+            android:layout_alignLeft="@id/tv_game_name"
+            android:text="Date" />
+
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
