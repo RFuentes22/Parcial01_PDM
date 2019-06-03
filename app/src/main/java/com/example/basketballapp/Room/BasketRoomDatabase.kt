@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
  * This is the backend. The database. This used to be done by the OpenHelper.
  * The fact that this has very few comments emphasizes its coolness.
  */
-@Database(entities = [GameBasket::class], version = 1)
+@Database(entities = [GameBasket::class], version = 2)
 
 abstract class BasketRoomDatabase : RoomDatabase() {
 
@@ -75,8 +75,8 @@ abstract class BasketRoomDatabase : RoomDatabase() {
             gameBasketDao.deleteAll()
 
             //Insert Games
-            gameBasketDao.insert(GameBasket("Barca","Madrid",1,2,"22/07/1998","13:30"))
-            gameBasketDao.insert(GameBasket("Liverpool","Alianza",2,3,"22/07/2019","15:30"))
+            gameBasketDao.insert(GameBasket(1,"Barca","Madrid",1,2,"22/07/1998","13:30"))
+            gameBasketDao.insert(GameBasket(2,"Liverpool","Alianza",2,3,"22/07/2019","15:30"))
         }
     }
 

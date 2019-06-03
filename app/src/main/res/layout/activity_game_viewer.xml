@@ -24,7 +24,7 @@
             android:textSize="60sp" />
 
         <TextView
-            android:id="@+id/tv_winner"
+            android:id="@+id/tv2_winner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50sp"
@@ -69,11 +69,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="N/A"
                 android:layout_marginTop="20sp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:fontFamily="@font/roboto_light"
+                android:text="N/A"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_nameTeamB"
                 app:layout_constraintTop_toTopOf="@+id/tv_nameTeamA" />
@@ -113,11 +113,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:text="N/A"
                 android:layout_marginTop="20sp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:fontFamily="@font/roboto_light"
+                android:text="N/A"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_nameTeamB"
                 app:layout_constraintTop_toTopOf="@+id/tv_nameTeamB" />
@@ -135,6 +135,7 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
             <TextView
                 android:id="@+id/tv_scoreA"
                 android:layout_width="wrap_content"
@@ -148,6 +149,7 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_time" />
+
             <TextView
                 android:id="@+id/tv_scoreB"
                 android:layout_width="wrap_content"
@@ -166,8 +168,8 @@
                 android:id="@+id/tv2_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:layout_marginTop="20sp"
+                android:ems="10"
                 android:text="N/A"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_date"
@@ -179,9 +181,9 @@
                 android:id="@+id/tv2_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
                 android:ems="10"
                 android:text="N/A"
-                android:layout_marginTop="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_time"
                 app:layout_constraintTop_toTopOf="@+id/tv_time"
@@ -192,21 +194,22 @@
                 android:id="@+id/tv2_scoreA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
                 android:ems="10"
                 android:text="N/A"
-                android:layout_marginTop="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_scoreA"
                 app:layout_constraintTop_toTopOf="@+id/tv_scoreA"
                 tools:layout_editor_absoluteX="125dp"
                 tools:layout_editor_absoluteY="216dp" />
+
             <TextView
                 android:id="@+id/tv2_scoreB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
                 android:ems="10"
                 android:text="N/A"
-                android:layout_marginTop="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_scoreB"
                 app:layout_constraintTop_toTopOf="@+id/tv_scoreB"

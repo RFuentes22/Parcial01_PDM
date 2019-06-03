@@ -15,6 +15,7 @@ class GameBasketRepository(private val gameBasketDao: GameBasketDao) {
 
     fun getAll(): LiveData<List<GameBasket>> = gameBasketDao.getAll()
 
+    fun getByid(id:Long):LiveData<GameBasket> = gameBasketDao.getByid(id)
 
     //fun nuke() = gameBasketDao.nukeTable()
 

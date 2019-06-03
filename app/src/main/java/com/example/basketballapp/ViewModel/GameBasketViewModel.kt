@@ -3,6 +3,7 @@ package com.example.basketballapp.ViewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.basketballapp.Repository.GameBasketRepository
 import com.example.basketballapp.Room.BasketRoomDatabase
@@ -25,7 +26,7 @@ class GameBasketViewModel(application: Application) : AndroidViewModel(applicati
         repository.insertGame(gameBasket)
     }
 
-
+    fun getByid(id:Long): LiveData<GameBasket> = repository.getByid(id)
 
     fun getAllGames(): LiveData<List<GameBasket>> = repository.getAll()
 

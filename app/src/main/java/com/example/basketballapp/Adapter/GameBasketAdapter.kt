@@ -36,7 +36,6 @@ class GameBasketAdapter(val items: List<GameBasket>, val clickListener: (GameBas
 
 
 
-
 /*
 class GameBasketAdapter internal constructor(context: Context) :  RecyclerView.Adapter<GameBasketAdapter.GameViewHolder>
     () {
@@ -69,6 +68,6 @@ class GameBasketAdapter internal constructor(context: Context) :  RecyclerView.A
 
     override fun getItemCount() = games.size
 
-}*/
-
+}
+*/
 

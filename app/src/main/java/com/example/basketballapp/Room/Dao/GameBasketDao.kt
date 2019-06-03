@@ -12,6 +12,9 @@ interface GameBasketDao {
     @Query("SELECT * from GameBasket ORDER BY id ASC")
     fun getAll(): LiveData<List<GameBasket>>
 
+    @Query("SELECT * from GameBasket WHERE GameBasket.id==:id ")
+    fun getByid(id:Long): LiveData<GameBasket>
+
     @Insert
     suspend fun insert(game: GameBasket)
 

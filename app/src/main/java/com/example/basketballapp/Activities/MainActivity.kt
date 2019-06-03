@@ -26,21 +26,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-/*
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = GameBasketAdapter(this)
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-*/
-
-
-       /* viewModel.getAllGames().observe(this, Observer { game ->
-            for (game in game) {
-                Log.d("Lista de games", game.id.toString() + game.teamA)
-            }
-        })*/
 
         Data()
+
         fab.setOnClickListener {
 
             val intent = Intent(this, AddMatchActivity::class.java)
@@ -50,11 +38,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
     }
 
     fun initRecycler(games: MutableList<GameBasket>){
-        viewManager = LinearLayoutManager(this)
+        viewManager = LinearLayoutManager(this )
 
         viewAdapter = GameBasketAdapter(games, {gameItem: GameBasket -> gameItemClicked(gameItem)})
 
@@ -65,8 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun gameItemClicked(item: GameBasket){
-        Log.d("data",item.teamA)
-        startActivity(Intent(this, GameViewer::class.java).putExtra("CLAV", item.ScoreTeamA ))
+        startActivity(Intent(this, GameViewer::class.java).putExtra("CLAVIER", item.id ))
     }
 
     fun Data(){
@@ -77,28 +63,12 @@ class MainActivity : AppCompatActivity() {
             for (games in games) {
                 Log.d("Lista de games", games.toString())
 
-                var games = if (games.id > 0) {
 
-                    MutableList(2) { i ->
-                        GameBasket(games.teamA,
-                                games.teamB,
-                                games.ScoreTeamA,
-                                games.ScoreTeamB,
-                                games.date,
-                                games.time
-
-                        )
-                    }
-                } else {
-                    MutableList(10) { i ->
-                        GameBasket("N/A","N/A",0,0,"00/00/00","0:00")
-                    }
-                }
-                initRecycler(games)
 
             }
-
+            initRecycler(games as MutableList<GameBasket>)
 
         })
+
     }
 }
