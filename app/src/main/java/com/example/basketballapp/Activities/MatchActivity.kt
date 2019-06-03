@@ -1,13 +1,19 @@
 package com.example.basketballapp.Activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.basketballapp.R
+import com.example.basketballapp.Room.Entity.GameBasket
+import com.example.basketballapp.ViewModel.GameBasketViewModel
 import kotlinx.android.synthetic.main.activity_match.*
+
+
 
 class MatchActivity : AppCompatActivity() {
     var scoreTeamA = 0
@@ -55,10 +61,24 @@ class MatchActivity : AppCompatActivity() {
             tv_score_team_b.text = scoreTeamB.toString()
         }
 
+        bt_Finish.setOnClickListener {
+            val viewModel = ViewModelProviders.of(this).get(GameBasketViewModel::class.java)
 
-        //val data: String = this.intent.extras.getString("AddData")
+            val name_teamA = intent.getStringExtra("name_teamA")
+            val name_teamB = intent.getStringExtra("name_teamB")
+            val date = intent.getStringExtra("date")
+            val time = intent.getStringExtra("time")
 
-        //Log.d("data",data)
+           // var data = viewModel.getAllGames() as GameBasket
+            //var id = data.id + 1
+
+           // Log.d("New id",id.toString())
+
+            viewModel.insertGame(GameBasket(3,name_teamA,name_teamB,scoreTeamA,scoreTeamB,date,time))
+            Toast.makeText(this, "SAVED!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }

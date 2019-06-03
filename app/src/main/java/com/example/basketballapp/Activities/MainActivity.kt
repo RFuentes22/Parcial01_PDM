@@ -30,20 +30,17 @@ class MainActivity : AppCompatActivity() {
         Data()
 
         fab.setOnClickListener {
-
             val intent = Intent(this, AddMatchActivity::class.java)
-            // start your next activity
             startActivity(intent)
         }
 
 
-
     }
 
-    fun initRecycler(games: MutableList<GameBasket>){
-        viewManager = LinearLayoutManager(this )
+    fun initRecycler(games: MutableList<GameBasket>) {
+        viewManager = LinearLayoutManager(this)
 
-        viewAdapter = GameBasketAdapter(games, {gameItem: GameBasket -> gameItemClicked(gameItem)})
+        viewAdapter = GameBasketAdapter(games, { gameItem: GameBasket -> gameItemClicked(gameItem) })
 
         recyclerview.apply {
             setHasFixedSize(true)
@@ -51,18 +48,18 @@ class MainActivity : AppCompatActivity() {
             adapter = viewAdapter
         }
     }
-    private fun gameItemClicked(item: GameBasket){
-        startActivity(Intent(this, GameViewer::class.java).putExtra("CLAVIER", item.id ))
+
+    private fun gameItemClicked(item: GameBasket) {
+        startActivity(Intent(this, GameViewer::class.java).putExtra("CLAVIER", item.id))
     }
 
-    fun Data(){
+    fun Data() {
         val viewModel = ViewModelProviders.of(this).get(GameBasketViewModel::class.java)
         viewModel.getAllGames().observe(this, Observer { games ->
 
             // games?.let { adapter.setGames(it) }
             for (games in games) {
                 Log.d("Lista de games", games.toString())
-
 
 
             }
